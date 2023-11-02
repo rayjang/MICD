@@ -1,5 +1,5 @@
 # MICD
-source code and dataset for the paper titled "MICD: More Intra-Class Diversity in Few-shot Text Classification with Many Classes"
+source code and dataset for the paper titled **"MICD: More Intra-Class Diversity in Few-shot Text Classification with Many Classes"**
 
 ![image](https://github.com/rayjang/MICD/assets/9244296/139208f9-b010-4d34-9665-272bf496bca7)
 
