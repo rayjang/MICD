@@ -1,5 +1,6 @@
 # MICD
 source code and dataset for the paper titled "MICD: More Intra-Class Diversity in Few-shot Text Classification with Many Classes"
+
 ![image](https://github.com/rayjang/MICD/assets/9244296/139208f9-b010-4d34-9665-272bf496bca7)
 
 ### Abstract
@@ -7,11 +8,10 @@ Deep learning has been successfully applied to various text classification tasks
 
 ### Main Concept of the proposed MICD model
 ![image](https://github.com/rayjang/MICD/assets/9244296/f2301ece-7c2d-41a0-afb4-7262055d77d9)
-To address a many-class few-shot text classification task, our proposed model MICD, as shown in the above figure, comprises of two parts for (1) intra-class diversity contrastive learning(ICDCL) and (2) intra-class augmentation(ICA)
+To address a many-class few-shot text classification task, our proposed model **MICD**, as shown in the above figure, comprises of two parts for (1) **intra-class diversity contrastive learning(ICDCL)** and (2) **intra-class augmentation(ICA)**
 
-- (1)  ICDCL produces an encoder that embeds all training samples to find generalizable decision boundaries well in a few-shot classifier. ICDCL consists of two components: text pair generation with hard positive sampling and a generalizable encoder for many classes with intra-class diversity contrastive loss.
-- (2) In the meta-testing stage, ICA effectively classifies many classes based on a few support data by improving intra-class diversity of data, which resolves a key issue of data scarcity in a few-shot scenario. ICA is composed of two components: one is for support set generation, which
-aims to select various samples that can represent data distribution. Another is augmenting the support sets via intra-class mix-up.
+- (1)  **ICDCL** produces an encoder that embeds all training samples to find generalizable decision boundaries well in a few-shot classifier. ICDCL consists of two components: text pair generation with hard positive sampling and a generalizable encoder for many classes with intra-class diversity contrastive loss.
+- (2) In the meta-testing stage, **ICA** effectively classifies many classes based on a few support data by improving intra-class diversity of data, which resolves a key issue of data scarcity in a few-shot scenario. ICA is composed of two components: one is for support set generation, which aims to select various samples that can represent data distribution. Another is augmenting the support sets via intra-class mix-up.
   
 ### Dataset
 - Bank77
@@ -25,9 +25,9 @@ Our MICD surpasses all other comparison model on four datasets in the 30-way 5-s
 ![image](https://github.com/rayjang/MICD/assets/9244296/cf6fe56c-4683-4d13-8450-40a265ef4a23)
 
 ### Source Code Detail
-- Generate_dataset_with_large_classes.ipynb: the source code for creating a training dataset for the 30-way 5-shot classification task. The code combines the train and test data from the existing dataset and splits them in a way that the classes do not overlap between the train and test data. The number of classes in the test data is set to 30, while the number of classes in the train data is set to the total number of classes minus 30. You can generate multiple versions of the training dataset by using different random seeds for each dataset.
+- **Generate_dataset_with_large_classes.ipynb**: the source code for creating a training dataset for the 30-way 5-shot classification task. The code combines the train and test data from the existing dataset and splits them in a way that the classes do not overlap between the train and test data. The number of classes in the test data is set to 30, while the number of classes in the train data is set to the total number of classes minus 30. You can generate multiple versions of the training dataset by using different random seeds for each dataset.
 
-- without_iterative_sampling_for_support_set.py: train and inference source code of our MICD model with ICDCL and intra-class mix-up of ICA. In this case, we select support sets for training the classifier randomly instead of our selection method of diverse support sets)
+- **without_iterative_sampling_for_support_set.py**: train and inference source code of our MICD model with ICDCL and intra-class mix-up of ICA. In this case, we select support sets for training the classifier randomly instead of our selection method of diverse support sets)
 
-- with_all_methods_including_iterative_sampling_for_support_set.py: train and inference source code of our MICD model with all techniques(ICDCL, ICA)
+- **with_all_methods_including_iterative_sampling_for_support_set.py**: train and inference source code of our MICD model with all techniques(ICDCL, ICA)
 
