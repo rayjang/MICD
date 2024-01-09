@@ -174,8 +174,6 @@ def testing(model_nm, first_p, min_v, a_p):
                 x_emb_query = model.encode(x_query)
 
                 nn = 5
-                sgd = KNeighborsClassifier(n_neighbors=nn)
-
 
                 augmented_x_emb_support = []
                 augmented_y_support = []
